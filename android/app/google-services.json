@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "279801847394",
+    "project_id": "feed-app-a8b0e",
+    "storage_bucket": "feed-app-a8b0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279801847394:android:e1514ae1d27cbd2ea63b3b",
+        "android_client_info": {
+          "package_name": "com.example.feedapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa8UQXe7XcmJhCkz5Mbcjijeb_zLGuM0s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
