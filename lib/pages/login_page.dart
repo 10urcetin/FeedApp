@@ -1,9 +1,10 @@
+import 'package:feedapp/pages/first_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 
 class LoginPage extends StatefulWidget {
- LoginPage({Key? key}) : super(key: key);
+  LoginPage({Key? key}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -11,8 +12,6 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   late FirebaseAuth auth;
-  String _email="";
-  String _password="";
 
   @override
   void initState() {
@@ -28,7 +27,10 @@ class _LoginPageState extends State<LoginPage> {
         onLogin: _login,
         onSignup: _signup,
         onSubmitAnimationCompleted: () {
-          // Yükleme ekranı tamamlandığında yapılacak işlemler
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => FirstPage()),
+          );
         },
         onRecoverPassword: _recoverPassword,
       ),
@@ -36,45 +38,41 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future<String?> _login(LoginData data) async {
-    createUserandEmail();
-    // Giriş yapma işlemleri burada gerçekleştirilir.
-    // Kullanıcı adı ve şifreyi `data.name` ve `data.password` ile alabilirsiniz.
-    // Başarılı bir şekilde giriş yapılırsa `null` dönmelisiniz, aksi halde bir hata mesajı dönebilirsiniz.
-    return null;
+  try {
+    // Check if data.name and data.password are not null
+    if (data.name != null && data.password != null) {
+      await auth.signInWithEmailAndPassword(
+        email: data.name!,
+        password: data.password!,
+      );
+      return null; // Return null for successful login
+    } else {
+      return 'Please provide a valid email and password.';
+    }
+  } on FirebaseAuthException catch (e) {
+    return e.message; // Return an error message for unsuccessful login
   }
+}
 
-  Future<String?> _signup(SignupData data) async {
-    loginUserandEmail();
-    // Kayıt olma işlemleri burada gerçekleştirilir.
-    // Kullanıcı adı ve şifreyi `data.name` ve `data.password` ile alabilirsiniz.
-    // Başarılı bir şekilde kayıt olunursa `null` dönmelisiniz, aksi halde bir hata mesajı dönebilirsiniz.
-    return null;
+Future<String?> _signup(SignupData data) async {
+  try {
+    // Check if data.name and data.password are not null
+    if (data.name != null && data.password != null) {
+      await auth.createUserWithEmailAndPassword(
+        email: data.name!,
+        password: data.password!,
+      );
+      return null; // Return null for successful signup
+    } else {
+      return 'Please provide a valid email and password.';
+    }
+  } on FirebaseAuthException catch (e) {
+    return e.message; // Return an error message for unsuccessful signup
   }
+}
 
   Future<String?> _recoverPassword(String name) async {
-    // Şifre sıfırlama işlemleri burada gerçekleştirilir.
-    // Kullanıcı adını `name` ile alabilirsiniz.
-    // Şifre sıfırlama işlemi başarılı olursa `null` dönmelisiniz, aksi halde bir hata mesajı dönebilirsiniz.
+    // Password recovery logic here (if needed)
     return null;
-  }
-  void createUserandEmail()async{
-  try{
-  var _userCrential= auth.createUserWithEmailAndPassword(email: _email, password: _password);
-
-  debugPrint(_userCrential.toString());
-  }catch(e){
-    debugPrint(e.toString());
-  }
-
-}
-  void loginUserandEmail()async{
-    try{
-      var _userCrential=await auth.signInWithEmailAndPassword(email: _email, password: _password);
-      debugPrint(_userCrential.toString());
-    }catch(e){
-      debugPrint(e.toString());
-
-    }
-
   }
 }
