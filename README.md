@@ -1,16 +1,41 @@
-# feedapp
+# Feed App
+  Yapılanlar
+    -Log In ve Sıgn In sayfası için Authentication
+    -Etkileşim verme: Like ve comments(ancak kayıt edilmiyor)
+    -Fake 10 gönderi
+    -Özet akış-->Flood Page
+    -Tarih sırasına göre akış
+  Yapılamayanlar
+    -Tweet floatingactionbutton ile oluşturuluyor ancak sadece firestore databaseye düşüyor.
+    -Flood sayfasında göstermeyi maalesef yapamadım.  
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screenshots
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Splash Screen -Log In -Sign In -First Page(Flood)
+
+|                   0000                    |                   0001                   |                   0010                   |                       0011                        |
+|:-----------------------------------------:|:----------------------------------------:|:----------------------------------------:|:-------------------------------------------------:|
+| ![](assets/images/ss/1.jpeg) | ![](assets/images/ss/2.jpeg) | ![](assets/images/ss/3.jpeg) | ![](assets/images/ss/4.jpeg) |
+
+
+- Trend Topics, Profile Page 
+
+|                   0000                    |                   0001                   |                  0010                   |                      0011                      |
+|:-----------------------------------------------:|:-----------------------------------------:|:--------------------------------------:|:------------------------------------------------:|
+| ![](assets/images/ss/5.jpeg) | ![](assets/images/ss/6.jpeg) | 
+
+
+
+
+
+  
+## Kullanılanlar ve Paketler
+
+ -flutter_login: ^4.2.1
+ -firebase_core: ^2.16.0
+ -firebase_auth: ^4.10.0
+ -cloud_firestore: ^4.9.2
