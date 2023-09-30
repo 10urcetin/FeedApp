@@ -1,13 +1,13 @@
 # Feed App
-  Yapılanlar
-    -Log In ve Sıgn In sayfası için Authentication
-    -Etkileşim verme: Like ve comments(ancak kayıt edilmiyor)
-    -Fake 10 gönderi
-    -Özet akış-->Flood Page
-    -Tarih sırasına göre akış
-  Yapılamayanlar
-    -Tweet floatingactionbutton ile oluşturuluyor ancak sadece firestore databaseye düşüyor.
-    -Flood sayfasında göstermeyi maalesef yapamadım.  
+- Yapılanlar
+-    Log In ve Sıgn In sayfası için Authentication
+-    Etkileşim verme: Like ve comments(ancak kayıt edilmiyor)
+-    Fake 10 gönderi
+-    Özet akış-->Flood Page
+-    Tarih sırasına göre akış
+- Yapılamayanlar
+-    Tweet floatingactionbutton ile oluşturuluyor ancak sadece firestore databaseye düşüyor.
+-    Flood sayfasında göstermeyi maalesef yapamadım.  
 
 
 
