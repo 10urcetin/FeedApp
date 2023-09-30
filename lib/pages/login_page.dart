@@ -45,12 +45,12 @@ class _LoginPageState extends State<LoginPage> {
         email: data.name!,
         password: data.password!,
       );
-      return null; // Return null for successful login
+      return null; //Giriş başarılı ise return null
     } else {
       return 'Please provide a valid email and password.';
     }
   } on FirebaseAuthException catch (e) {
-    return e.message; // Return an error message for unsuccessful login
+    return e.message; // Değilse error göster 
   }
 }
 
@@ -62,17 +62,17 @@ Future<String?> _signup(SignupData data) async {
         email: data.name!,
         password: data.password!,
       );
-      return null; // Return null for successful signup
+      return null; // Giriş başarılı ise return null
     } else {
       return 'Please provide a valid email and password.';
     }
   } on FirebaseAuthException catch (e) {
-    return e.message; // Return an error message for unsuccessful signup
+    return e.message; // Değilse error göster
   }
 }
 
   Future<String?> _recoverPassword(String name) async {
-    // Password recovery logic here (if needed)
+    // Şu anlık gerek yok ilerde yapılabilir
     return null;
   }
 }

@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:feedapp/pages/account_page.dart';
+import 'package:feedapp/pages/topic_page.dart';
+import 'package:flutter/material.dart';
 import 'package:feedapp/pages/create_page.dart';
 import 'package:feedapp/pages/flood_page.dart';
 
@@ -15,7 +16,7 @@ class _FirstPageState extends State<FirstPage> {
 
   final List<Widget> _pages = [
     FloodPage(),
-    CreatePage(),
+    TrendTopicPage(),
     AccountPage(),
   ];
 
@@ -34,7 +35,7 @@ class _FirstPageState extends State<FirstPage> {
         child: BottomNavigationBar(
           items: [
             buildBottomNavigationBarItem(Icons.flood, 'Flood'),
-            buildBottomNavigationBarItem(Icons.create, 'Create'),
+            buildBottomNavigationBarItem(Icons.tag, 'Topic'),
             buildBottomNavigationBarItem(Icons.account_box, 'Account'),
           ],
           currentIndex: _currentIndex,
