@@ -35,7 +35,8 @@
   
 ## Kullanılanlar ve Paketler
 
- -flutter_login: ^4.2.1
- -firebase_core: ^2.16.0
- -firebase_auth: ^4.10.0
- -cloud_firestore: ^4.9.2
+- cupertino_icons: ^1.0.2
+- flutter_login: ^4.2.1
+- firebase_core: ^2.16.0
+- firebase_auth: ^4.10.0
+- cloud_firestore: ^4.9.2
